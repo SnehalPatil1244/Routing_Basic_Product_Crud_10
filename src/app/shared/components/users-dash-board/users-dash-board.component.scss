@@ -1,0 +1,30 @@
+.list-group-item {
+    border: none;
+    border-radius: 12px !important;
+    margin-bottom: 10px;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.list-group-item:hover {
+    transform: translateY(-3px);
+    background: #f5f3ff;
+}
+
+.badge {
+    border-radius: 20px;
+    padding: 6px 10px;
+}
+
+.col-md-8 {
+    min-height: 400px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+button[mat-raised-button] {
+    border-radius: 25px !important;
+}

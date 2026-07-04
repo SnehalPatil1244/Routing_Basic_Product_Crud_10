@@ -1,0 +1,59 @@
+.navbar-custom {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+.navbar-brand {
+    color: #00e5ff !important;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-size: 25px;
+}
+
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 100px;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+
+.navbar-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-style: italic;
+    position: relative;
+    transition: 0.3s;
+}
+
+
+.navbar-menu li a:hover {
+    color: #00e5ff;
+    transform: translateY(-2px);
+}
+
+
+.navbar-menu li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: #00e5ff;
+    transition: 0.3s;
+}
+
+.navbar-menu li a:hover::after {
+    width: 100%;
+}

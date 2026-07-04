@@ -1,0 +1,29 @@
+<mat-card class="bgcolor mt-4">
+    <div class="row">
+        <div class="col-md-12 text-right">
+            <button routerLink="addproduct" mat-raised-button color="primary" class="mt-2 mb-3">Add
+                Product</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <mat-card>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between"
+                        *ngFor="let pro of products; trackBy: trackByFun" [routerLink]="['/products', pro.pid]"
+                        routerLinkActive="active" [queryParams]="{ cr: pro.canReturn }">
+                        <strong>{{pro.pname}}</strong>
+                        <small class="badge ml-3 p-3" [ngClass]="{
+                                'badge-success' : pro.canReturn,
+                                'badge-danger' : !pro.canReturn
+                            }">
+                            {{pro.canReturn ? 'Return' : 'Not-Return'}}
+                        </small>
+                    </li>
+                </ul>
+            </mat-card>
+        </div>
+        <div class="col-md-8 mb-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>

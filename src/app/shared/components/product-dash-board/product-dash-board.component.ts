@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { IProduct } from '../../models/product';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-dash-board',
@@ -9,21 +10,25 @@ import { IProduct } from '../../models/product';
 })
 export class ProductDashBoardComponent implements OnInit {
   products: Array<IProduct> = []
-  constructor(private productservice: ProductsService) { }
+  constructor(private productservice: ProductsService,
+    private routes: ActivatedRoute
+  ) {
+    this.products = this.routes.snapshot.data['products']
+  }
 
   ngOnInit(): void {
-    this.getproducts()
+    // this.getproducts()
   }
 
   getproducts() {
-    this.productservice.getproducts().subscribe({
-      next: data => {
-        this.products = data
-      },
-      error: err => {
-        console.log(err);
-      }
-    })
+    // this.productservice.getproducts().subscribe({
+    //   next: data => {
+    //     this.products = data
+    //   },
+    //   error: err => {
+    //     console.log(err);
+    //   }
+    // })
   }
 
   trackByFun(index: number, product: IProduct) {

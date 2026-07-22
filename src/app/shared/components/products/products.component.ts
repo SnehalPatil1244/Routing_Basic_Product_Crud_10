@@ -20,28 +20,33 @@ export class ProductsComponent implements OnInit {
     private routes: ActivatedRoute,
     private router: Router,
     private matdialog: MatDialog
-  ) { }
+  ) {
+    this.routes.data.subscribe(res => {
+      this.productobj = res['products']
+      this.productId = res['products'].pid
+    })
+  }
 
   ngOnInit(): void {
-    this.getproducts()
+    // this.getproducts()
   }
 
   getproducts() {
-    this.routes.params.subscribe(param => {
-      this.productId = param['productId']
-      if (this.productId) {
-        this.productservice.getproductsById(this.productId)
-          .subscribe({
-            next: data => {
-              this.productobj = data
-            },
-            error: err => {
-              console.log(err);
+    // this.routes.params.subscribe(param => {
+    //   this.productId = param['productId']
+    //   if (this.productId) {
+    //     this.productservice.getproductsById(this.productId)
+    //       .subscribe({
+    //         next: data => {
+    //           this.productobj = data
+    //         },
+    //         error: err => {
+    //           console.log(err);
 
-            }
-          })
-      }
-    })
+    //         }
+    //       })
+    //   }
+    // })
   }
 
   redirectToEdit() {

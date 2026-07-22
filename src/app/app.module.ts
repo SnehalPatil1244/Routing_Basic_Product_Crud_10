@@ -26,6 +26,8 @@ import { HomepageComponent } from './shared/components/homepage/homepage.compone
 import { FairsCardComponent } from './shared/components/fairs-card/fairs-card.component';
 import { FairsDetailsComponent } from './shared/components/fairs-details/fairs-details.component';
 import { FairsDashBoardComponent } from './shared/components/fairs-dash-board/fairs-dash-board.component';
+import { AuthComponent } from './shared/components/auth/auth.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { FairsDashBoardComponent } from './shared/components/fairs-dash-board/fa
     HomepageComponent,
     FairsCardComponent,
     FairsDetailsComponent,
-    FairsDashBoardComponent
+    FairsDashBoardComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,8 @@ import { FairsDashBoardComponent } from './shared/components/fairs-dash-board/fa
     MatIconModule,
     MatDialogModule,
     MatChipsModule,
-    OverlayModule
+    OverlayModule,
+    HttpClientModule
 ],
   providers: [],
   bootstrap: [AppComponent]

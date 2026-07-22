@@ -14,7 +14,7 @@
                     <div class="form-group">
                         <label for="pprice">Price</label>
                         <input type="number" formControlName="pprice" class="form-control">
-                        <small *ngIf="productForm.get('pname')?.touched && productForm.get('pname')?.invalid">
+                        <small *ngIf="productForm.get('pprice')?.touched && productForm.get('pprice')?.invalid">
                             Price Is Required
                         </small>
                     </div>

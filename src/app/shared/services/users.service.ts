@@ -10,13 +10,13 @@ export class UsersService {
 
   UsersDetails: Array<Iuser> = [
     {
-      userName: 'Rohit Yewale',
+      userName: 'Sanika Patil',
       userId: 'EMP101',
       userRole: 'Candidate',
       profileDescription: '3 years of experience in Angular development.',
       profileImage: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
       skills: ['Angular', 'TypeScript', 'RxJS', 'Bootstrap'],
-      experienceYears: '3',
+      experienceYears: '1 to 3 years',
       isActive: true,
       address: {
         current: {
@@ -41,7 +41,7 @@ export class UsersService {
       profileDescription: 'Experienced in Angular and responsive UI development.',
       profileImage: 'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
       skills: ['Angular', 'HTML', 'CSS', 'JavaScript'],
-      experienceYears: '2',
+      experienceYears: '3 to 5 years',
       isActive: true,
       address: {
         current: {

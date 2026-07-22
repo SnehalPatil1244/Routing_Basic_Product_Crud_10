@@ -1,7 +1,7 @@
 <div class="col-md-10 offset-md-1 mt-3">
     <mat-card>
         <mat-card-content>
-            <h3 class="font-weight-bold">{{isinEditMode ? 'Update User' : 'Add User'}}</h3>
+            <h3 class="font-weight-bold text-center">{{isinEditMode ? 'Update User' : 'Add User'}}</h3>
             <form [formGroup]="UserForm" (ngSubmit)="onusersubmit()">
                 <div class="form-group">
                     <label for="userName">User Name</label>
@@ -29,9 +29,9 @@
                     <label for="experienceYears">Experience Years</label>
                     <select formControlName="experienceYears" type="text" class="form-control" id="experienceYears">
                         <option value="1 to 3 years">1 to 3 years</option>
-                        <option value="3 to 5 years">1 to 3 years</option>
-                        <option value="5 to 7 years">1 to 3 years</option>
-                        <option value="7 to 10 years">1 to 3 years</option>
+                        <option value="3 to 5 years">3 to 5 years</option>
+                        <option value="5 to 7 years">5 to 7 years</option>
+                        <option value="7 to 10 years">7 to 10 years</option>
                         <option value="10+ years">10+ years</option>
                     </select>
                 </div>
@@ -42,12 +42,12 @@
                             <input [id]="'skills - ' + i" [formControlName]="i" type="text" class="form-control">
                         </div>
                         <div class="col-md-2">
-                            <button type="button" class="btn btn-sm btn-outline-danger">Remove</button>
+                            <button (click)="onremoveskills(i)" [disabled]="edituser?.userRole === 'Candidate'" type="button" class="btn btn-sm btn-outline-danger">Remove</button>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <button [disabled]="formcontrols['skills'].invalid" (click)="addskillscontrol()"
+                            <button [disabled]="formcontrols['skills'].invalid" (click)="addskillscontrol()" [disabled]="edituser?.userRole === 'Candidate'"
                                 type="button" mat-raised-button color="primary" class="mb-4">Add Skills</button>
                         </div>
                     </div>
@@ -116,7 +116,8 @@
                     </div>
                 </div>
                 <button *ngIf="!isinEditMode" type="submit" mat-raised-button color="primary">Add User</button>
-                <button *ngIf="isinEditMode" type="button" mat-raised-button color="primary" (click)="onUpdate()" >Update User</button>
+                <button *ngIf="isinEditMode" type="button" mat-raised-button color="primary" (click)="onUpdate()">Update
+                    User</button>
             </form>
 
         </mat-card-content>
